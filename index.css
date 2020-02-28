@@ -1,0 +1,564 @@
+*{
+    margin:0;
+    padding: 0;
+    perspective: 800px;
+}
+
+body
+{
+    background: black;
+}
+
+
+body,html,#wallpaper,.slides,ul,li
+{
+    width: 100%;
+    height: 100%;
+}
+
+#wallpaper
+{
+    position: relative;
+    overflow: hidden;
+}
+
+.SelectBox
+{
+    position: absolute;
+    z-index: 2;
+    color: white;
+    width: 250px;
+
+}
+
+.title
+{
+    width: 100%;
+    height: 30px;
+    background-image: -webkit-linear-gradient(#ff49d1,#b005b6);
+    text-align: center;
+    line-height: 30px;
+    border-radius: 10px;
+    
+}
+.fa.fa-angle-down
+{
+    
+    position: absolute;
+    right: 20px;
+    cursor: pointer;
+    line-height: 30px;
+    
+} 
+
+.content
+{
+    width: 150px;
+    height: 30px;
+    text-align: center;
+    height: 100%;
+    float: right;
+    opacity: 0;
+    transition: 0.2s;
+}
+
+.Active
+{
+    opacity: 1;
+}
+
+.content ul
+{
+    background-image: -webkit-linear-gradient(#4dc2f8,#0d82b9);
+    height: 100%;
+    border-radius: 10px;
+    margin-top: 5px;    
+}
+.content ul li:before
+{
+    font-family: FontAwesome;
+    content: '\f105';
+    position: absolute;
+    left: 10px;
+    color: black;
+}
+.content ul li
+{
+    border-bottom: 1px solid #fff;
+    padding: 5px 0;
+    box-sizing: border-box;
+    list-style: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.content ul li:hover
+{
+    padding-left: 20px;
+}
+
+
+#select option
+{
+    width: 100%;
+    text-align: center;
+
+}
+
+.slides ul
+{
+    position: relative;
+}
+
+
+.slides ul li.oneSlide
+{
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+    height: 100%;
+    background-size: cover;
+    opacity: 0;
+}
+
+
+
+.btns
+{
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    font-size: 100px;
+    width: 100%;
+    display:flex;
+    color: white;
+}
+
+.btns b
+{
+    cursor: pointer;
+    text-align: center;
+    width: 100%;
+
+}
+
+.btns b:hover
+{
+    color: #5549ff;
+}
+
+.slides ul li.oneSlide.Active
+{
+    opacity: 1;
+}
+
+/*_________________________________Soft Scale________________________________*/
+.Remove_Scale
+{
+    animation: scaleLarge 0.5s forwards;
+}
+@keyframes scaleLarge
+{
+    from
+    {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to
+    {
+        transform: scale(2);
+        opacity: 0;
+    }
+
+}
+.Action_Scale
+{
+    animation: scaleSmaller 0.5s forwards;
+}
+@keyframes scaleSmaller
+{
+    from
+    {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to
+    {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/*_________________________________SWIPE_________________________*/
+.SwipeLeft_Right
+{
+    animation: SwipeL_R 0.5s forwards;
+}
+@keyframes SwipeL_R
+{
+    from
+    {
+        transform: translateX(0%);
+        opacity: 1;
+
+    }
+    to
+    {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+}
+.FollowLeft_Right
+{
+    animation: FollowL_R 0.5s forwards;
+}
+@keyframes FollowL_R
+{
+    from
+    {
+        transform: translateX(-100%);
+        opacity: 0;
+
+    }
+    to
+    {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+
+}
+
+
+.SwipeRight_Left
+{
+    animation: SwipeR_L 0.5s forwards;
+}
+@keyframes SwipeR_L{
+    from
+    {
+        transform: translateX(0%);
+        opacity: 1;
+
+    }
+    to
+    {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+}
+.FollowRight_Left
+{
+    animation: FollowR_L 0.5s forwards;
+}
+@keyframes FollowR_L
+{
+    from
+    {
+        transform: translateX(100%);
+        opacity: 0;
+
+    }
+    to
+    {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+
+}
+
+/* ____________________________SWING __________________________-*/
+
+.SwingLeft_Right
+{
+    animation: SwingL_R 0.5s forwards;
+}
+@keyframes SwingL_R
+{
+    0%
+    {
+        transform: translateX(0%);
+        opacity: 1;
+
+    }
+    40%
+    {
+        transform: translateX(-10%);
+        opacity: 1;
+    }
+    100%
+    {
+        transform: translateX(100%);
+        opacity: 1;
+    }
+
+}
+.FollowSWingLeft_Right
+{
+    animation: Follow_S_L_R 0.5s forwards;
+    animation-delay: 0.2s;
+}
+@keyframes Follow_S_L_R
+{
+    from
+    {
+        transform: translateX(-100%);
+        opacity: 1;
+
+    }
+    to
+    {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+
+}
+
+
+.SwingRight_Left
+{
+    animation: SwingR_L 0.5s forwards;
+}
+@keyframes SwingR_L
+{
+    0%
+    {
+        transform: translateX(0%);
+        opacity: 1;
+
+    }
+    40%
+    {
+        transform: translateX(10%);
+        opacity: 1;
+    }
+    100%
+    {
+        transform: translateX(-100%);
+        opacity: 1;
+    }
+
+}
+.FollowSwingRight_Left
+{
+    animation: Follow_S_R_L 0.5s forwards;
+    animation-delay: 0.2s;
+}
+@keyframes Follow_S_R_L
+{
+    from
+    {
+        transform: translateX(100%);
+        opacity:1;
+
+    }
+    to
+    {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+
+}
+
+
+/* ________________________ 3D SWIPE _______________________- */
+
+
+._3DSwipe_L_R
+{
+    animation: swipe3D_L_R 1s forwards;
+}
+@keyframes swipe3D_L_R
+{
+    0%
+    {
+        transform: translateX(0%) scale(1);
+        opacity: 1;
+
+    }
+    100%
+    {
+        transform: translateX(100%) scale(0.8);
+        opacity: 1;
+    }
+
+}
+.Follow3DSwipe_L_R
+{
+    animation: Follow3DSwipe_L_R 1s forwards;
+    transform-origin: right;
+
+}
+@keyframes Follow3DSwipe_L_R
+{
+    from
+    {
+        transform: translateX(-100%) rotateY(-40deg) scale(0.8);
+        opacity: 1;
+
+    }
+    to
+    {
+        transform: translateX(0%) rotateY(0deg) scale(1);
+        opacity: 1;
+    }
+
+}
+
+._3DSwipe_R_L
+{
+    animation: swipe3D_R_L 1s forwards;
+}
+@keyframes swipe3D_R_L
+{
+    0%
+    {
+        transform: translateX(0%) scale(1);
+        opacity: 1;
+
+    }
+    100%
+    {
+        transform: translateX(-100%) scale(0.8);
+        opacity: 1;
+    }
+
+}
+.Follow3DSwipe_R_L
+{
+    animation: Follow3DSwipe_R_L 1s forwards;
+    transform-origin: left;
+
+}
+@keyframes Follow3DSwipe_R_L
+{
+    from
+    {
+        transform: translateX(100%) rotateY(40deg) scale(0.8);
+        opacity: 1;
+
+    }
+    to
+    {
+        transform: translateX(0%) rotateY(0deg) scale(1);
+        opacity: 1;
+    }
+
+}
+
+
+/*_____________________UP - DOWN effect__________________*/
+.upEffect
+{
+    animation: up 1s forwards;
+    z-index: 100;
+}
+
+@keyframes up
+{   
+    from{z-index: 100;}
+    to{ height: 0;}
+}
+
+.downEffect
+{
+    animation: down 1s forwards;
+    z-index: 100;
+}
+
+@keyframes down
+{   
+    from{height: 0;}
+    to{ height: 100%;}
+}
+
+
+/*___________STICK IT _______________*/
+
+._3DSwipe_B_T
+{
+    animation: swipe3D_B_T 1s forwards;
+    transform-origin: top;
+
+}
+@keyframes swipe3D_B_T
+{
+    0%
+    {
+        transform: rotateX(0deg) scale(1);
+        opacity: 1;
+
+    }
+    100%
+    {
+        transform: rotateX(-45deg) scale(0.5);
+        opacity: 0.5;
+    }
+
+}
+.Follow3DSwipe_B_T
+{
+    animation: Follow3DSwipe_B_T 1s forwards;
+    z-index: 4;
+}
+@keyframes Follow3DSwipe_B_T
+{
+    from
+    {
+        transform: translateY(100%);
+        opacity: 1;
+
+    }
+    to
+    {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+
+}
+
+
+
+._3DSwipe_T_B
+{
+    animation: swipe3D_T_B 1s forwards;
+    transform-origin: bottom;
+}
+@keyframes swipe3D_T_B
+{
+    0%
+    {
+        transform: rotateX(0) scale(1);
+        opacity: 1;
+
+    }
+    100%
+    {
+        transform: rotateX(45deg) scale(0.5);
+        opacity: 0.5;
+    }
+
+}
+.Follow3DSwipe_T_B
+{
+    animation: Follow3DSwipe_T_B 1s forwards;
+    z-index: 5;
+
+}
+@keyframes Follow3DSwipe_T_B
+{
+    from
+    {
+        transform: translateY(-100%);
+        opacity: 1;
+
+    }
+    to
+    {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+
+}
